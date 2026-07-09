@@ -311,6 +311,6 @@ convertButton.addEventListener("click", async function () {
 
   // Shows the result on the page
   document.getElementById("conversion-result").textContent =
-    "Converted amount: " + data.result.toFixed(2);
+  "Converted amount: " + toCurrency + " " + data.result.toFixed(2);
 });
 
