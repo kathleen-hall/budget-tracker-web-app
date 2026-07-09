@@ -1,0 +1,285 @@
+/* Styling for whole page */
+body {
+  /* Removes browser's default space around page */
+  margin: 0;
+text-align: center;
+  /* Sets the main font for the page */
+  font-family: Arial, sans-serif;
+
+  /* Sets main background colour */
+  background-color: #7c987c;
+
+  /* Setting default text colour */
+ color: #000000 ;
+}
+/* Styling for header area */
+header {
+  /* Placing logo and text next to each other */
+  display: flex;
+justify-content: center;
+  /* Aligns the logo + text vertically */
+  align-items: center;
+
+  background-color: hsl(120, 12%, 54%);
+}
+
+
+/* Styles the logo image inside the header */
+header img {
+  /* Sets the width of the logo */
+  width: 300px;
+}
+
+/* Styles main overview tile */
+
+.overview {
+  /* Limits how wide the tile can become */
+  max-width: 1000px;
+
+  /* Centres the tile horizontally */
+  margin: 0 auto;
+
+  /* Adds space inside the tile */
+  padding: 24px;
+
+  /* Gives the tile a white background */
+  background-color: white;
+
+  /* Rounds the corners */
+  border-radius: 12px;
+}
+
+.overview h2 {
+  margin-top: 0;
+  font-size: 26px;
+font-family: "League Spartan", sans-serif;
+color: #7c987c;
+}
+
+/* Styles login and signup box */
+.auth-page {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
+border-radius: 12px;
+}
+
+/* Centres logo */
+.auth-logo {
+  display: block;
+  width: 230px;
+  margin: 10px auto;
+}
+
+/* Styles the Login heading */
+.auth-page h1 {
+  font-family: "League Spartan", sans-serif;
+   color: hsl(120, 12%, 54%); 
+}
+
+/* Arranges the login and signup form vertically */
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Styles  email and password boxes */
+.auth-page input {
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.auth-page a {
+  color: #7c987c;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+}
+
+
+/* CARDS INSIDE OVERVIEW STYLING*/
+
+/* Placing overview cards next to each other */
+.summary-cards {
+  display: flex;
+  gap: 16px;
+}
+
+/* Styling for each overview card */
+.summary-card {
+  flex: 1;
+  padding: 16px;
+  background-color: #f3f5f3;
+  border-radius: 10px; /* needed for rounded edge*/
+}
+
+/* Styling for currency converter tile */
+.currency-converter {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 15px;
+  background-color: white;
+  border-radius: 12px;
+   font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.currency-converter h2 {
+  color: #7c987c;
+  font-size: 24px;
+  font-family: "League Spartan", sans-serif;
+  
+}
+
+.currency-converter input,
+.currency-converter select,
+.currency-converter button {
+  font-family: "League Spartan", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  border: 2px solid #7c987c;
+  border-radius: 8px;
+}
+
+.currency-converter button {
+  width: 50%;
+  padding: 14px;
+  margin-top: 16px;
+  background-color: #f3f5f3;
+  color: #7c987c;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+
+ /* Styling for Insights tile */
+.insights {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+}
+/* Styling for Insights heading */
+.insights h2 {
+  color: #7c987c;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Styles Add Income or Expense tile */
+.add-transaction {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+/* Styles the Add Transaction heading */
+.add-transaction h2 {
+  color: #7c987c;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Styles form fields */
+.add-transaction input,
+.add-transaction select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0 16px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Styles Add Transaction button */
+.add-transaction button {
+  width: 100%;
+  padding: 14px;
+  background-color: #7c987c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Styles the Transaction History tile */
+.transaction-history {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+/* Styles the Transaction History heading */
+.transaction-history h2 {
+  color: #7c987c;
+  font-family: "League Spartan", sans-serif;
+}
+
+.month-selector {
+  max-width: 1000px;
+  margin: 0 auto 24px;
+
+  display: flex;
+  align-items: center;
+}
+
+.month-selector label {
+  font-family: "League Spartan", sans-serif;
+  color: #7c987c;
+  font-weight: 600;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  background-color:  #f3f5f3;
+  font-size: 16px;
+}
+
+.month-selector input {
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+
+/* table styling for transaction table*/ 
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 12px;
+  border-bottom: 1px solid #cccccc;
+  text-align: left;
+}
+
+
+.insight-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.insight-card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.insight-card h3 {
+  font-family: "League Spartan", sans-serif;
+  margin-top: 0;
+}
+

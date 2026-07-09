@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Main front page header -->
+  <header>
+  <img src="images/BudgetTrackerLogo.png" alt="Budget Tracker logo">
+
+  <!--Hidden header
+  <div>
+    <h1>Budget Tracker</h1>
+    <p>Track your income, expenses and savings in one place.</p>
+  </div>
+  -->
+</header>
+
+<!-- Main financial overview section -->
+<main>
+  <section class="month-selector">
+  <label for="month-filter">Month</label>
+  <input type="month" id="month-filter">
+</section>
+</section>
+  <section class="overview">
+    
+    <h2>Monthly Overview</h2>
+
+    <p>
+      A monthly summary of your income, expenses, and available balance.
+    </p>
+    <div class="summary-cards">
+
+  <div class="summary-card">
+    <h3>Total Income</h3>
+    <p id="total-income">R0.00</p>
+  </div>
+
+  <div class="summary-card">
+    <h3>Total Expenses</h3>
+    <p id="total-expenses">R0.00</p>
+  </div>
+
+  <div class="summary-card">
+    <h3>Balance</h3>
+    <p id="total-balance">R0.00</p>
+  </div>
+
+
+</div>
+  </section>
+
+
+<!-- ADD TRANSACTION SECTION -->
+
+<section class="add-transaction">
+  <h2>Add Income or Expense</h2>
+
+  <label for="transaction-type">Type</label>
+  <select id="transaction-type">
+    <option value="income">Income</option>
+    <option value="expense">Expense</option>
+  </select>
+
+  <label for="transaction-description">Description</label>
+  <input
+    type="text"
+    id="transaction-description"
+    placeholder="For example: Salary or Groceries"
+  >
+
+  <label for="transaction-amount">Amount</label>
+  <input
+    type="number"
+    id="transaction-amount"
+    placeholder="Enter amount"
+  >
+<label for="transaction-date">Date</label>
+<input type="date" id="transaction-date">
+  <button type="button" id="add-transaction-button">
+    Add Transaction
+  </button>
+</section>
+
+<!-- TRANSACTION HISTORY SECTION -->
+
+<section class="transaction-history">
+  <h2>Monthly Transaction History</h2>
+
+  
+<!--table headings for transaction history -->
+ <table class="transaction-table">
+  <tr>
+    <th>Date</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </tr>
+
+  <tbody id="transaction-list">
+  </tbody>
+</table>
+</section>
+
+
+
+<!-- INSIGHTS SECTION -->
+ 
+  <section class="insights">
+  <h2>Insights - Last 6 Months</h2>
+
+  <div class="insight-cards">
+
+    <div class="insight-card">
+      <h3>Average</h3>
+      <p id="average-expenses">R0.00</p>
+    </div>
+
+    <div class="insight-card">
+      <h3>Highest</h3>
+      <p id="highest-month">No data</p>
+    </div>
+
+    <div class="insight-card">
+      <h3>Lowest</h3>
+      <p id="lowest-month">No data</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- CURRENCY CONVERTER SECTION -->
+
+  <section class="currency-converter">
+
+  <h2>Currency Converter Tool</h2>
+
+  <label for="amount">Amount</label>
+  <input type="number" id="amount" placeholder="Enter amount">
+
+  <label for="from-currency">From</label>
+  <select id="from-currency">
+    <option value="USD">US Dollar</option>
+    <option value="ZAR">South African Rand</option>
+    <option value="AUD">Australian Dollar</option>
+  <option value="CAD">Canadian Dollar</option>
+<option value="JPY">Japanese Yen</option>
+  <option value="CHF">Swiss Franc</option>
+  <option value="NZD">New Zealand Dollar</option>
+    <option value="GBP">British Pound</option>
+    <option value="EUR">Euro</option>
+  </select>
+
+  <label for="to-currency">To</label>
+  <select id="to-currency">
+  <option value="USD">US Dollar</option>
+  <option value="ZAR">South African Rand</option>
+  <option value="AUD">Australian Dollar</option>
+  <option value="CAD">Canadian Dollar</option>
+<option value="JPY">Japanese Yen</option>
+  <option value="CHF">Swiss Franc</option>
+  <option value="NZD">New Zealand Dollar</option>
+    <option value="GBP">British Pound</option>
+    <option value="EUR">Euro</option>
+  </select>
+
+ <!-- ID ADDED TO BUTTON AND RESULT FOR API -->
+
+  <button type="button" id="convert-button">Convert</button>
+<p id="conversion-result">Converted amount: R0.00</p>
+</section>
+</main>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
