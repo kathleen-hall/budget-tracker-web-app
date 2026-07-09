@@ -283,3 +283,84 @@ border-radius: 12px;
   margin-top: 0;
 }
 
+/*MOBILE RESPONSIVENESS STYLING*/
+/* Makes dashboard more responsive for smaller phone screen */
+@media (max-width: 700px) {
+  .overview,
+  .add-transaction,
+  .transaction-history,
+  .currency-converter,
+  .insights {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 16px;
+  }
+
+  .summary-cards,
+  .insight-cards {
+    flex-direction: column;
+  }
+
+  .transaction-history {
+    overflow-x: auto;
+  }
+
+  .currency-converter button {
+    width: 100%;
+  }
+
+  header img {
+    width: 220px;
+  }
+
+  .month-selector {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+/*converter styling stacked to be mobile responsive*/
+
+@media (max-width: 700px) {
+  .currency-converter input,
+  .currency-converter select,
+  .currency-converter button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .currency-converter label {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .currency-converter {
+    font-size: 16px;
+  }
+}
+/* login and signup pages responsive styling */
+@media (max-width: 700px) {
+  .auth-logo {
+    width: 170px;
+    max-width: 80%;
+    display: block;
+    margin: 20px auto 10px auto;
+  }
+
+  .auth-page {
+  width: auto;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+  .auth-page input,
+  .auth-page button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
