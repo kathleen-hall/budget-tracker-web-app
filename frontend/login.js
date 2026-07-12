@@ -27,7 +27,8 @@ loginForm.addEventListener("submit", async function (event) {
   const data = await response.json();
 
   // Opens dashboard when login is correct
-  if (data.success === true) {
-    window.location.href = "dashboard.html";
-  }
+ if (data.success === true) {
+  localStorage.setItem("loggedInUserEmail", email);
+  window.location.href = "dashboard.html";
+}
 });

@@ -29,7 +29,8 @@ let transactions = [];
     type: type,
     description: description,
     amount: Number(amount),
-    date: date
+    date: date,
+    userEmail: localStorage.getItem("loggedInUserEmail")
   };
 
   // Adds the transaction to the array
@@ -65,9 +66,13 @@ await loadTransactions();
 });
 
 // Loads saved transactions from the backend
+// local storage for user
 async function loadTransactions() {
-  const response = await fetch("http://127.0.0.1:5000/api/transactions");
+  const loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
 
+  const response = await fetch(
+    "http://127.0.0.1:5000/api/transactions?userEmail=" + loggedInUserEmail
+  );
   transactions = await response.json();
 
   displayTransactions();
@@ -118,7 +123,7 @@ const transactionItem = document.createElement("tr");
   "<td>" + transaction.date + "</td>" +
   "<td>" + transaction.description + "</td>" +
   "<td>" + transaction.type + "</td>" +
-  "<td>R" + transaction.amount.toFixed(2) + "</td>";
+  "<td>$" + transaction.amount.toFixed(2) + "</td>";
 
 const deleteButton = document.createElement("button");
 
@@ -167,13 +172,13 @@ function updateOverview(filteredTransactions) {
   const balance = totalIncome - totalExpenses;
 
   document.getElementById("total-income").textContent =
-    "R" + totalIncome.toFixed(2);
+    "$" + totalIncome.toFixed(2);
 
   document.getElementById("total-expenses").textContent =
-    "R" + totalExpenses.toFixed(2);
+    "$" + totalExpenses.toFixed(2);
 
   document.getElementById("total-balance").textContent =
-    "R" + balance.toFixed(2);
+    "$" + balance.toFixed(2);
 }
 // Calculates the average expenses for the last 6 months
 function showInsights() {
@@ -239,18 +244,18 @@ if (lowestExpenses === null || monthExpenses < lowestExpenses) {
   const averageExpenses = totalExpensesForSixMonths / 6;
 
   document.getElementById("average-expenses").textContent =
-    "Average monthly expenses: R" +
+    "Average monthly expenses: $" +
     averageExpenses.toFixed(2);
     document.getElementById("highest-month").textContent =
   "Highest spending month: " +
   highestMonth +
-  " - R" +
+  " - $" +
   highestExpenses.toFixed(2);
 
   document.getElementById("lowest-month").textContent =
   "Lowest spending month: " +
   lowestMonth +
-  " - R" +
+  " - $" +
   lowestExpenses.toFixed(2);
 }
 

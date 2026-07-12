@@ -21,6 +21,7 @@ app.use(express.json());
         });
 
         */
+
  mongoose
  .connect(process.env.MONGO_URI)
  .then(function () {
@@ -31,8 +32,10 @@ app.use(express.json());
         });
         
 
+
+
 // POST 
-  // Creates a route for adding a new transaction
+  // Route for adding a new transaction
   
 app.post("/api/transactions", async function (request, response) {
 
@@ -51,9 +54,13 @@ app.post("/api/transactions", async function (request, response) {
 //GET 
 // Gets all saved transactions from the database
 app.get("/api/transactions", async function (request, response) {
-  const transactions = await Transaction.find();
+  const userEmail = request.query.userEmail;
 
-  response.json(transactions );
+  const transactions = await Transaction.find({
+    userEmail: userEmail
+  });
+
+  response.json(transactions);
 });
 
 // DELETE 

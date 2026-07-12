@@ -5,7 +5,8 @@ const transactionSchema = new mongoose.Schema({
   type: String,
   description: String,
   amount: Number,
-  date: String
+  date: String,
+  userEmail: String
 });
 
 // Model from that transaction structure
